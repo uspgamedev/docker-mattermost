@@ -26,13 +26,14 @@ RUN set -x; \
 
 USER mattermost
 
-# HEALTHCHECK CMD curl --fail http://localhost:8000 || exit 1
+HEALTHCHECK CMD curl --fail http://localhost:8000 || exit 1
 
 COPY entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]
 WORKDIR /mattermost
 CMD ["platform"]
 
+EXPOSE 8000
 ENV PATH="/mattermost/bin:${PATH}"
 
 # Declare volumes for mount point directories
