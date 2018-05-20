@@ -1,6 +1,6 @@
 FROM debian
 
-ENV MM_VERSION=4.9.2
+ENV MM_VERSION=4.10.0
 
 RUN set -x; \
     apt-get update \
